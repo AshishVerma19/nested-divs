@@ -1,24 +1,22 @@
-const body = document.body;
+const container = document.getElementById('1');
 
 function addDiv(parent, count) {
-    const div = document.createElement('div');
+	const div = document.createElement('div');
 
-    div.id= parseInt(count) + 1;
-    parent.appendChild(div);
+	div.id = parseInt(count) + 1;
+	parent.appendChild(div);
 
-    return div.id;
+	return parent.firstElementChild;
 }
 
 function createDivs(count) {
-    debugger;
-    let i = 0;
-    let parent = body;
+	let i = 1;
+	let parent = container;
 
-    while( i <= count) {
-        i = addDiv(parent, i);
-
-        parent = document.getElementById(i);
-    }
+	while (i <= count) {
+		parent = addDiv(parent, i);
+		i++;
+	}
 }
 
 createDivs(100);
